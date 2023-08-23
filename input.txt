@@ -1,0 +1,37 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    int n, m, a[100][100];
+    cin >> n >> m;
+    int s = 0, x = 1, j, i;
+    for (s = 0; x <= n * m; s++){
+        i = s;
+    for (j = s; j < n - s; j++){
+        a[i][j] = x;
+        x++;
+    }
+    for (i; i < m - s; i++){
+        a[i][j] = x;
+        x++;
+    }
+    for (j; j > s; j--){
+        a[i][j] = x;
+        x++;
+    }
+    for (i; i > s; i--){
+        a[i][j] = x;
+        x++;
+    }
+    }
+    for (i = 0; i < n; i++){
+        for (j = 0; j < m; j++){
+            cout << setw(4) << a[i][j] << " ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
